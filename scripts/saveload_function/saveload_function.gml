@@ -1,71 +1,5 @@
 
-/*
-function save_game(){
 
-	#region SAVE GAME
-	var _saveData = array_create(0);
-	
-	with (oPlayer)
-	{
-		var _saveEntity = 
-		{
-			#region Player status
-			obj : object_get_name(object_index),
-			y : y,
-			x : x,
-			image_index : image_index,
-			image_blend : image_blend,
-			HP : HP,
-			MP : MP,
-			maxHP : maxHP,
-			maxMP : maxMP,
-			Exp : Exp,
-			attackskill_set : attackskill_set,
-			attackskill_cool : attackskill_cool,
-			attackskill_coolset : attackskill_coolset,
-			hspd : hspd,
-			vsp : vsp,
-			grv : grv,
-			SPD : SPD,
-			maxjumpcount : maxjumpcount,
-			jumppower : jumppower,
-			rollspd : rollspd,
-			knockback : knockback,
-			knockback_power : knockback_power,
-			state : state,
-			skillS_maxcool : skillS_maxcool,
-			moveskill_maxcool : moveskill_maxcool,
-			moveskill_set : moveskill_set,
-			#endregion
-			
-			#region global_variables
-			input_type : global.input_type,
-			gamevolume : global.gamevolume,
-			room_direction : 99,
-			BGM_number : global.BGM_number,
-			
-			
-			language : global.language,
-			
-			#endregion
-			
-		}
-		array_push(_saveData, _saveEntity);
-	}
-
-	// turn data to JSON string and save it
-	var _string = json_stringify(_saveData);
-	var _buffer = buffer_create(string_byte_length(_string) + 1 , buffer_fixed, 1);
-	buffer_write(_buffer, buffer_string, _string);
-	buffer_save(_buffer, "savedgame.save");
-	buffer_delete(_buffer);
-	
-	show_debug_message("Game Saved!" + _string);
-	#endregion
-	
-	audio_play_sound(SE_system07, 1, false);
-}
-*/
 
 // 게임 상태를 저장하는 구조체
 function GameState() {
@@ -90,8 +24,61 @@ function get_unlocked_skills() {
     return unlocked;
 }
 
-function save_game() {
-    #region SAVE GAME
+function draw_save_menu() {
+    if (global.save_menu_open) {
+        var menu_x = display_get_gui_width() / 2 - 150;
+        var menu_y = display_get_gui_height() / 2 - 100;
+        var menu_width = 300;
+        var menu_height = 200;
+        var slot_height = menu_height/global.save_slots - 8;
+
+        // 메뉴 배경 그리기
+        //draw_rectangle(menu_x, menu_y, menu_x + menu_width, menu_y + menu_height, false);
+        draw_sprite_stretched(UI_box, 9, menu_x, menu_y, menu_width, menu_height);
+		draw_set_color(c_white);
+
+        // 저장 슬롯 그리기
+        for (var i = 0; i < global.save_slots; i++) {
+            var slot_name = "savefile_" + string(i);
+            var slot_y = menu_y + 20 + i * slot_height;
+            var color = (i == global.selected_slot) ? c_yellow : c_black;
+			draw_sprite_stretched(UI_box, 9,menu_x + 8, slot_y, menu_width - 64, slot_height);
+			draw_rectangle_color(menu_x + 20, slot_y + slot_height/2 -6, menu_x + 28, slot_y + slot_height/2 + 4, color, color, color, color, false);
+            draw_text_color(menu_x + menu_width/2 - 64, slot_y + slot_height/2 - 4, ds_map_find_value(global.savefile_info, slot_name), color, color, color, color, 1);
+        }
+    }
+}
+
+
+function update_save_menu() {
+    if (global.save_menu_open) {
+        if (global.interaction_delay <= 0) {
+            if (keyboard_check_pressed(vk_up)) {
+                global.selected_slot = max(0, global.selected_slot - 1);
+                global.interaction_delay = room_speed / 10; // 0.1초 딜레이
+            }
+            if (keyboard_check_pressed(vk_down)) {
+                global.selected_slot = min(global.save_slots - 1, global.selected_slot + 1);
+                global.interaction_delay = room_speed / 10; // 0.1초 딜레이
+            }
+            if (keyboard_check_pressed(ord("E"))) {
+                save_game(global.selected_slot);
+                global.save_menu_open = false;
+                global.interaction_delay = room_speed / 2; // 0.5초 딜레이
+				oPlayer.state = "Move";	//Player 행 동 가 능 
+            }
+            if (keyboard_check_pressed(vk_escape)) {
+                global.save_menu_open = false;
+                global.interaction_delay = room_speed / 2; // 0.5초 딜레이
+            }
+        }
+    }
+}
+
+
+
+
+function save_game(slot) {
     var _saveData = ds_map_create();
 
     with (oPlayer) {
@@ -172,24 +159,27 @@ function save_game() {
     var _string = json_stringify(_saveData);
     var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
     buffer_write(_buffer, buffer_string, _string);
-    buffer_save(_buffer, "savedgame.save");
+    buffer_save(_buffer, "savefile_" + string(slot) + ".save");
     buffer_delete(_buffer);
 
-    show_debug_message("Game Saved!" + _string);
-    #endregion
+    // Update save slot information in the map
+    var slot_name = "savefile_" + string(slot);
+    ds_map_replace(global.savefile_info, slot_name, "Saved Game " + string(slot));
 
+    show_debug_message("Game Saved! Slot: " + string(slot));
     audio_play_sound(SE_system07, 1, false);
 }
 
 
 
-function load_game() {
-    if (file_exists("savedgame.save")) {
+function load_game(slot) {
+    var filename = "savefile_" + string(slot) + ".save";
+    if (file_exists(filename)) {
         with (oPlayer) instance_destroy();
     }
 
-    if (file_exists("savedgame.save")) {
-        var _buffer = buffer_load("savedgame.save");
+    if (file_exists(filename)) {
+        var _buffer = buffer_load(filename);
         var _string = buffer_read(_buffer, buffer_string);
         buffer_delete(_buffer);
 
@@ -245,8 +235,12 @@ function load_game() {
             }
         }
 
-        show_debug_message("Game Loaded!" + _string);
+        show_debug_message("Game Loaded! Slot: " + string(slot));
         oPlayer.state = "Move";
+    } else {
+        show_debug_message("Save file not found in slot: " + string(slot));
     }
 }
+
+
 

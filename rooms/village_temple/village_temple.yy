@@ -36,6 +36,7 @@
     {"name":"inst_66F8BD11","path":"rooms/village_temple/village_temple.yy",},
     {"name":"inst_5C21E0A4","path":"rooms/village_temple/village_temple.yy",},
     {"name":"inst_7D352512","path":"rooms/village_temple/village_temple.yy",},
+    {"name":"inst_288C1571","path":"rooms/village_temple/village_temple.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -112,6 +113,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oplayer_apport","path":"objects/oplayer_apport/oplayer_apport.yy",},"propertyId":{"name":"room_direction","path":"objects/oplayer_apport/oplayer_apport.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"99",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":1.0,"x":2176.0,"y":1088.0,},
         {"$GMRInstance":"v1","%Name":"inst_7D352512","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7D352512","objectId":{"name":"oEvent006","path":"objects/oEvent006/oEvent006.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":2144.0,"y":992.0,},
+        {"$GMRInstance":"v1","%Name":"inst_288C1571","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_288C1571","objectId":{"name":"Save_obelisk","path":"objects/Save_obelisk/Save_obelisk.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2368.0,"y":1664.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"maptile","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"maptile","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":39,"SerialiseWidth":95,"TileCompressedData":[
           -393,10,-36,12,-59,10,2,12,107,-32,0,2,107,12,-59,10,2,12,98,-32,0,2,98,12,-59,10,2,12,98,-16,0,1,5,

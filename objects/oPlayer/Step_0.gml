@@ -65,7 +65,7 @@ switch (state)
 {
 	case "Stay" :
 	#region Stay
-
+	state_set_sprite(player_defalt, 1, 0);
 	gravity_defalt();
 	
 	#endregion

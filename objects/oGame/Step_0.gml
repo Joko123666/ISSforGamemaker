@@ -2,19 +2,12 @@
 //변수 업데이트
 if (time > 1440)	//날자 변경
 {time = 0; day++; set_item_price(); dayreset_genpoint();}
-
-//키 입력
-/*	inventory_old
-if keyboard_check_pressed(ord("I"))	&& instance_exists(oPlayer)
-{
-	oInventory.x = oPlayer.x + 32;
-	oInventory.y = oPlayer.y - 128;
-	if oInventory.isOpen == false
-	{oInventory.isOpen = true;}
-	else
-	{oInventory.isOpen = false;}
+// 상호작용 입력딜레이
+if (global.interaction_delay > 0) {
+    global.interaction_delay -= 1;
 }
-*/
+
+
 
 switch (game_state)
 {

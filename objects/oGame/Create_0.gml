@@ -54,6 +54,25 @@ set_global_variables();
 dayreset_genpoint();
 Encyclopedia_set();
 
+// oGame Create 이벤트
+global.save_menu_open = false;
+global.save_slots = 3;
+global.selected_slot = 0;
+global.savefile_info = ds_map_create();
+global.interaction_delay = 0; // 상호작용 딜레이 타이머
+
+// 저장 슬롯 초기화
+for (var i = 0; i < global.save_slots; i++) {
+    var slot_name = "savefile_" + string(i);
+    if (!file_exists(slot_name + ".save")) {
+        ds_map_add(global.savefile_info, slot_name, "Empty Slot");
+    } else {
+        ds_map_add(global.savefile_info, slot_name, "Saved Game " + string(i));
+    }
+}
+
+
+
 //인스턴스 생성
 gameinput = instance_create_depth(0, 0, 0, oInput);
 instance_create_layer(0, 0, "Hud", oHud);
