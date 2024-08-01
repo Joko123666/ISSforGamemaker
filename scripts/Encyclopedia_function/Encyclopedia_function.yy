@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Encyclopedia_function",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Encyclopedia_function",
+  "parent":{
+    "name":"스크립트",
+    "path":"folders/스크립트.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

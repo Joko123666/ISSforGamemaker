@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_input_typeA",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_input_typeA",
+  "parent":{
+    "name":"etc",
+    "path":"folders/스크립트/etc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

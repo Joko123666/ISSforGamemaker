@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"SE_levelup",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.415986,
+  "name":"SE_levelup",
+  "parent":{
+    "name":"SE",
+    "path":"folders/소리/SE.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"SE_levelup.wav",
+  "type":0,
+  "volume":0.75,
+}

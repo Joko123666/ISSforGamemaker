@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fade_toroom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fade_toroom",
+  "parent":{
+    "name":"etc",
+    "path":"folders/스크립트/etc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

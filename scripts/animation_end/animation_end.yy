@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"animation_end",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"animation_end",
+  "parent":{
+    "name":"etc",
+    "path":"folders/스크립트/etc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

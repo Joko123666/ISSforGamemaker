@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"state_set_sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"state_set_sprite",
+  "parent":{
+    "name":"etc",
+    "path":"folders/스크립트/etc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
