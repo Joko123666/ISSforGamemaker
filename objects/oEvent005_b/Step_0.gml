@@ -22,7 +22,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 	{
 		oHud.draw_color_set = c_black;
 		oHud.draw_color_switch = true;
-		dialog_Screen("???", 50, 51, System_picture, 0, SE_system01);
+		dialog_Screen(global.name_goddess, 50, 51, System_picture, 0, SE_system01);
 
 	}
 

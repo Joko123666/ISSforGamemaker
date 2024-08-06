@@ -22,7 +22,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 	else if global.dialog_process == 1	
 	{
 		oHud.draw_color_switch = false;
-		dialog_Screen("주인공", 14, 14, Player_picture, 0, SE_dialog_m01);
+		dialog_Screen(global.name_player, 14, 14, Player_picture, 0, SE_dialog_m01);
 	}
 	else if global.dialog_process == 2	
 	{
@@ -30,7 +30,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 	}
 	else if global.dialog_process == 3
 	{
-		dialog_Screen("주인공", 17, 17, Player_picture, 0, SE_dialog_m01);
+		dialog_Screen(global.name_player, 17, 17, Player_picture, 0, SE_dialog_m01);
 	}
 	else if global.dialog_process == 4
 	{
@@ -38,19 +38,19 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 	}
 	else if global.dialog_process == 5
 	{
-		dialog_Screen("주인공", 21, 21, Player_picture, 0, SE_dialog_m01);
+		dialog_Screen(global.name_player, 21, 21, Player_picture, 0, SE_dialog_m01);
 	}
 	else if global.dialog_process == 6
 	{
-		dialog_Screen("여신", 22, 33, GOD_picture, 2, SE_system01);
+		dialog_Screen(global.name_goddess, 22, 33, GOD_picture, 2, SE_system01);
 	}
 	else if global.dialog_process == 7
 	{
-		dialog_Screen("주인공", 34, 34, Player_picture, 0, SE_dialog_m01);
+		dialog_Screen(global.name_player, 34, 34, Player_picture, 0, SE_dialog_m01);
 	}
 	else if global.dialog_process == 8
 	{
-		dialog_Screen("여신", 35, 46, GOD_picture, 0, SE_system01);
+		dialog_Screen(global.name_goddess, 35, 46, GOD_picture, 0, SE_system01);
 	}
 	#endregion
 	act_count = 15;

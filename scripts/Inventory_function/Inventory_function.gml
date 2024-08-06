@@ -125,6 +125,19 @@ function Inventory_add(root_object, item_type)
 	else return false;
 }
 
+//특정 아이템 제거 함수
+function remove_item_by_id(root_object, item_type) {
+    var slot = Inventory_search(root_object, item_type);
+    if (slot != -1) {
+        root_object.inventory[slot] = -1; // 아이템 제거
+        show_debug_message("Item removed: " + string(item_type));
+        return true; // 제거 성공
+    } else {
+        show_debug_message("Item not found: " + string(item_type));
+        return false; // 아이템 없음
+    }
+}
+
 //인벤토리가 가득 차있는지 확인하고 가득 찼다면 true반환
 function Inventory_isfull(root_object)
 {

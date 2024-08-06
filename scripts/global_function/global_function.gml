@@ -22,6 +22,19 @@ function set_global_variables()
 		global.attackkill_cost[i] = 20;
 	}
 	
+	//문자입력
+	global.user_input = ""; // 사용자가 입력한 문자열
+	global.input_active = false; // 입력 창 활성화 여부
+	
+	//NAME
+	global.name_player = "주인공";
+	global.name_priest = "베르그";
+	global.name_cleric = "";
+	global.name_goddess = "플라리스";
+	global.name_nun = "메르메르";
+	global.name_guildmaster = "가가메르";
+	global.name_cook = "펫슈";
+	global.name_merchant = "금블랑";
 }
 
 function dayreset_genpoint()

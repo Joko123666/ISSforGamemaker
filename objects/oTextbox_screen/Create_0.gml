@@ -47,3 +47,5 @@ textcol = c_black;
 
 setup = false;
 
+//예외처리
+text[98] = string(global.name_player) + text[98];

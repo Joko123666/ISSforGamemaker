@@ -1,2 +1,2 @@
 
-save_game();
+draw_save_menu();

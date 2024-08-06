@@ -45,3 +45,22 @@ switch (game_state)
 	
 }
 
+#region 문자 입력
+if (global.input_active) {
+    // 엔터키로 입력 완료
+    if (keyboard_check_pressed(vk_enter)) {
+        global.input_active = false; // 입력 창 비활성화
+        global.user_input = keyboard_string;
+        show_debug_message("Input saved: " + global.user_input);
+        // 여기서 입력된 내용을 저장하거나 다른 처리를 할 수 있음
+        keyboard_string = ""; // 입력된 문자열 초기화
+    }
+
+    // 백스페이스로 문자 삭제
+    if (keyboard_check_pressed(vk_backspace)) {
+        if (string_length(keyboard_string) > 0) {
+            keyboard_string = string_delete(keyboard_string, string_length(keyboard_string), 1);
+        }
+    }
+}
+#endregion

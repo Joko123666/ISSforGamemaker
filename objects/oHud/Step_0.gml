@@ -59,17 +59,21 @@ if (oGame.game_state == "Menu")	#region //메뉴가 열려있다면
 				case 1 :	//게임 도감
 					menu_level = 1;
 				break;
+				
+				case 2 :	//퀘스트
+					menu_level = 2;
+				break;
 	
-				case 2 :	//게임 불러오기
+				case 3 :	//게임 불러오기
 					//load_game();
 					game_restart();
 				break;
 	
-				case 3 :	//게임 설정
+				case 4 :	//게임 설정
 					menu_level = 3;
 				break;
 	
-				case 4 :	//게임 종료
+				case 5 :	//게임 종료
 					game_end();
 				break;
 			}
@@ -99,6 +103,14 @@ if (oGame.game_state == "Menu")	#region //메뉴가 열려있다면
 				break;
 			}
 			break;
+			
+			
+			case 2 :	//Quest
+			switch(pos)
+			{
+				case 0 :
+				break;
+			} 
 			
 			case 3 :	//설정
 			switch(pos)
@@ -139,6 +151,9 @@ if (oGame.game_state == "Menu")	#region //메뉴가 열려있다면
 			 }
 			break;
 			case 1 :	//도감 메뉴
+				menu_level = 0;
+			break;
+			case 2 :	//Quest
 				menu_level = 0;
 			break;
 			case 3 :	//설정 메뉴

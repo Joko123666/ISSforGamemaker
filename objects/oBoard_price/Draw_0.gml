@@ -12,6 +12,7 @@ var _xdistance = 12;
 var _ydistance = 8;
 var _xpoint = x + 8;
 var _ypoint = y + 24;
+draw_set_font(Font01);
 for (var i = 0; i < 6; i ++)
 {
 	for (var j = 0; j < 5; j++)

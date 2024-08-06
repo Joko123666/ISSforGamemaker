@@ -209,6 +209,12 @@ if (oGame.game_state == "Menu")
 			draw_text_color(_menu_x+menu_border*2, _menu_y+menu_border*2+menu_space*i, menu[menu_level, i], _c, _c, _c, _c, 1);
 		}
 	}
+	
+	if (menu_level == 2)	//Quest
+	{
+		draw_quests();
+	}
+	
 	if (menu_level == 11)	//도감 - 재료
 	{
 		draw_set_valign(fa_top);
@@ -263,6 +269,12 @@ if (oGame.game_state == "Menu")
 		}
 	}
 	
+}
+
+// 문자입력 받아오기
+if (global.input_active) {
+    draw_text(10, 10, "Enter text: " + keyboard_string);
+    draw_text(10, 30, "Press Enter to save");
 }
 
 if (draw_color_switch == true)

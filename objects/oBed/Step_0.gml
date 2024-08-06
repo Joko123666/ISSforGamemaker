@@ -23,7 +23,7 @@ if (place_meeting(x, y, oPlayer))
 				mentality = maxMentality;
 				state = "Stay";
 				alarm[0] = 30;
-				save_game();
+				draw_save_menu();
 			}
 			fade_screen(30, c_black);
 			instance_destroy();

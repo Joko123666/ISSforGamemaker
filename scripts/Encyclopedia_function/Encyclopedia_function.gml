@@ -48,3 +48,61 @@ function Encyclopedia_set()
 	global.Encyclopedia[0][50] = {name : "" , explanation : "", count : 0}; 
 	
 }
+
+function next_encyclopedia_page() {
+    global.encyclopedia_page = (global.encyclopedia_page + 1) % global.total_encyclopedia_pages;
+}
+
+function previous_encyclopedia_page() {
+    global.encyclopedia_page -= 1;
+    if (global.encyclopedia_page < 0) {
+        global.encyclopedia_page = global.total_encyclopedia_pages - 1;
+    }
+}
+
+function draw_encyclopedia() {
+    var page_start = global.encyclopedia_page * global.encyclopedia_items_per_page;
+    var page_end = min(page_start + global.encyclopedia_items_per_page, global.encyclopedia_length);
+    
+    var menu_x = 60;
+    var menu_y = 40;
+    var menu_width = display_get_gui_width() - 120;
+    var menu_height = display_get_gui_height() - 80;
+    var menu_border = 10;
+    var menu_space = 44;
+    
+    // 메뉴 전체 배경 그리기
+    draw_sprite_stretched(UI_box, 8, menu_x, menu_y, menu_width, menu_height);
+    
+    for (var i = page_start; i < page_end; i++) {
+        var _c = c_white;
+        if (pos == i) {_c = c_yellow}
+        var _check_count = global.Encyclopedia[0][i].count;
+        
+        // 아이템 이름
+        draw_sprite_stretched(UI_box, 3, menu_x + menu_border * 3 - 6, menu_y + menu_border * 2 + menu_space * (i - page_start) - 4, menu_border * 8, menu_space / 2);
+        if (_check_count > 0) {
+            draw_text_color(menu_x + menu_border * 3, menu_y + menu_border * 2 + menu_space * (i - page_start), global.Encyclopedia[0][i].name, _c, _c, _c, _c, 1);
+        } else {
+            draw_text_color(menu_x + menu_border * 3, menu_y + menu_border * 2 + menu_space * (i - page_start), "???", _c, _c, _c, _c, 1);
+        }
+        // 아이템 번호
+        draw_text_color(menu_x + menu_border - 8, menu_y + menu_border * 2 + menu_space * (i - page_start), string(i) + ".", _c, _c, _c, _c, 1);
+    }
+    
+    var _check_count = global.Encyclopedia[0][pos].count;
+    // 아이템 이미지 박스
+    draw_sprite_stretched(UI_box, 1, menu_x + menu_border * 11 - 2, menu_y + menu_border * 2 - 2, 68, 68);
+    if (_check_count > 0) {
+        // 아이템 설명
+        draw_text_color(menu_x + menu_border * 17, menu_y + menu_border * 2, global.Encyclopedia[0][pos].explanation, c_black, c_black, c_black, c_black, 1);
+        // 아이템 이미지
+        draw_sprite_ext(sItems, pos, menu_x + menu_border * 11, menu_y + menu_border * 2, 2, 2, 0, c_white, 1);
+        // 아이템 획득 갯수
+        draw_text(menu_x + menu_border * 11, menu_y + menu_border * 6, "획득 수 : " + string(global.Encyclopedia[0][pos].count));
+    }
+
+    // 페이지 넘기기 텍스트
+    draw_text(menu_x, menu_y + menu_height - 20, "Page " + string(global.encyclopedia_page + 1) + " / " + string(global.total_encyclopedia_pages));
+}
+

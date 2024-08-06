@@ -1,2 +1,2 @@
 
-load_game();
+load_game(1);

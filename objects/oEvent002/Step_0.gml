@@ -21,7 +21,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 			dialog_Screen("System", 5, 5, System_picture, 0, SE_system01);
 		break;
 		case 1 :
-			dialog_Screen("주인공", 6, 7, Player_picture, 0, SE_dialog_m01);
+			dialog_Screen(global.name_player, 6, 7, Player_picture, 0, SE_dialog_m01);
 		break;
 		case 2 :
 			oHud.draw_color_set = c_black;
@@ -29,7 +29,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 		break;
 		case 3 :
 			oHud.draw_color_switch = false;
-			dialog_Screen("주인공", 9, 9, Player_picture, 0, SE_dialog_m01);
+			dialog_Screen(global.name_player, 9, 9, Player_picture, 0, SE_dialog_m01);
 		break;
 		case 4 :
 			instance_destroy();
