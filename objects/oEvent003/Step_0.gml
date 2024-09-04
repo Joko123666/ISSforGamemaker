@@ -60,7 +60,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 	{
 		instance_destroy();
 		oPlayer.state = "Move";
-		oGame.game_progress = 3;	
+		oGame.game_progress = 4;	
 		global.dialog_process = 0;
 		instance_create_depth(oPlayer.x, oPlayer.y - 8, 0, oEvent004_sel);
 	}

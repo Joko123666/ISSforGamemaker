@@ -2,7 +2,7 @@
 //대화가 끝까지 진행 된 경우 대화창 종료시 삭제 
 if global.dialog_process == 2
 {
-	oGame.game_progress = 1;	
+	oGame.game_progress = 2;	
 	global.dialog_process = 0;
 	instance_destroy();
 }

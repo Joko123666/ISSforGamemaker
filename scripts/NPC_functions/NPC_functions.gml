@@ -62,14 +62,6 @@ function sell_useitem(item_num)
 	}
 }
 
-function create_textbox_popup(_text, _boxC, _textC)
-{
-	var text = instance_create_layer(x, y-84, "Effects", text_drawingob);
-	text.text = string(_text);
-	text.box_color = _boxC;
-	var text_width = string_width(_text);
-	text.x -= text_width/2 + 4;
-}
 
 function useitem_price(item_num)
 {

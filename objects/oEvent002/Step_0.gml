@@ -34,7 +34,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 		case 4 :
 			instance_destroy();
 			oPlayer.state = "Move";
-			oGame.game_progress = 2;	
+			oGame.game_progress = 3;	
 			global.dialog_process = 0;
 		break;
 	}

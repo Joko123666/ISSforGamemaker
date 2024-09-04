@@ -3,7 +3,7 @@
 if global.dialog_process == 1
 {
 	instance_destroy();
-	oGame.game_progress = 2;	
+	oGame.game_progress = 6;	
 }
 
 

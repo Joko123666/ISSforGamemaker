@@ -3,7 +3,7 @@
 if global.dialog_process == 5
 {
 	instance_destroy();
-	oGame.game_progress = 2;	
+	oGame.game_progress = 5;	
 }
 
 //메뉴의 전체 갯수를 카운트

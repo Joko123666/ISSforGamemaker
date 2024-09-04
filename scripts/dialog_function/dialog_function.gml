@@ -10,6 +10,10 @@ function dialog_Screen(_name, _start, _end, _spr, _imgnum, _sound)
 	textbox.sprite_set = _spr;
 	textbox.sound_set = _sound;
 	textbox.image_num = _imgnum;
+	
+	//예외처리
+	if oGame.game_progress == 6
+	{textbox.text[98] = string(global.name_player) + text[98];}
 }
 
 function dialog_Screen_color(_name, _start, _end, _spr, _imgnum, _sound, _boxnum, _Tcolor)
@@ -27,6 +31,15 @@ function dialog_Screen_color(_name, _start, _end, _spr, _imgnum, _sound, _boxnum
 	textbox.textbox_img = _boxnum;
 }
 
+function create_textbox_popup(_text, _boxC, _textC)
+{
+	var text = instance_create_layer(x, y-84, "Effects", text_drawingob);
+	text.text = string(_text);
+	text.box_color = _boxC;
+	var text_width = string_width(_text);
+	text.x -= text_width/2 + 4;
+}
+/*
 function load_dialogue(file_path) {
     var file = file_text_open_read(file_path);
     var dialogue_lines = ds_list_create();
@@ -39,6 +52,24 @@ function load_dialogue(file_path) {
     
     file_text_close(file);
     return dialogue_lines;
+}
+*/
+function load_dialogue_NPC(_linenum)
+{	
+//텍스트 파일 호출
+	var file = file_text_open_read(working_directory + "NPC_dialog.txt");
+	var _text = "";
+	for (var i = 0; i < 180; i++;)
+	{
+		var _raw_text = "";
+	    text[i] = file_text_read_string(file);
+		_raw_text = text[i];
+		var _processed_text = replace_player_name(_raw_text);
+		text[i] = _processed_text;
+	    file_text_readln(file);
+	}
+	file_text_close(file);
+	return text[_linenum];
 }
 
 /*

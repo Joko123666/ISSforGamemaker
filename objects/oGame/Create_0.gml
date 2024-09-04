@@ -86,8 +86,8 @@ global.dialogue_complete = false;
 global.dialogue_choices = ds_list_create();
 
 // oGame Create 이벤트
-global.dialogue_data_visual = load_dialogue("Mainstream_dialog.txt");
-global.dialogue_data_balloon = load_dialogue("NPC_dialog.txt");
+//global.dialogue_data_visual = load_dialogue("Mainstream_dialog.txt");
+//global.dialogue_data_balloon = load_dialogue("NPC_dialog.txt");
 global.current_dialogue = "";
 global.dialogue_index = 0;
 global.dialogue_speed = 2; // 텍스트 출력 속도 (프레임 단위)

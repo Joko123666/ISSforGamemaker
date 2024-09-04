@@ -172,6 +172,7 @@ if (oGame.game_state == "Play")	&& instance_exists(oPlayer)
 if (oGame.game_state == "Menu")
 {
 	screen_color_alpha(c_dkgray, 0.4);
+	draw_text(width - 120, 60, global.name_player); //임시
 	draw_text(0, 2, menu_level);
 	draw_text(0, 10, pos);
 	if (menu_level == 0) or (menu_level == 1) or (menu_level == 3)

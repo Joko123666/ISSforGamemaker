@@ -10,8 +10,8 @@ object_type = "player";
 #region //기본 스테이터스
 maxHP = 100;		//최대 체력
 HP = maxHP;
-maxSP = 100;		//현재의 최대 기력(공복으로 감소)
-maxSP_defalt = 100;	//진짜 최대 기력
+maxSP = 1100;		//현재의 최대 기력(공복으로 감소)
+maxSP_defalt = 1100;	//진짜 최대 기력
 SP = maxSP;
 SP_regentime = 40;	//공복 회복시작까지 걸리는 시간
 isSPregen = false;

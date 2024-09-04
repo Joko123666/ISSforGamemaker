@@ -3,7 +3,7 @@
 if global.dialog_process == 1
 {
 	instance_destroy();
-	oGame.game_progress = 5;	
+	oGame.game_progress = 6;	
 	global.room_direction = 99;
 	fade_toroom(village_temple, 20, c_black);
 }

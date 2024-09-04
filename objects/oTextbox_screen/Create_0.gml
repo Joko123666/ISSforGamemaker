@@ -18,23 +18,6 @@ textline_end = 2;
 //종료시 대화진행도 설정
 progress_set = 0;
 
-//the text
-page = textline_start;
-page_num = 0;
-
-//텍스트 파일 호출
-	var file = file_text_open_read(working_directory + "Mainstream_dialog.txt");
-	for (var i = 0; i < 180; i++;)
-	{
-	    text[i] = file_text_read_string(file);
-	    file_text_readln(file);
-	}
-	file_text_close(file);
-
-text_length[0] = string_length(text[0]);
-draw_char = 0;
-text_spd = 1;
-
 //이미지 파일 세팅
 sprite_set = System_picture;
 image_num = 0;
@@ -47,5 +30,27 @@ textcol = c_black;
 
 setup = false;
 
-//예외처리
-text[98] = string(global.name_player) + text[98];
+//the text
+page = textline_start;
+page_num = 0;
+
+//텍스트 파일 호출
+	var file = file_text_open_read(working_directory + "Mainstream_dialog.txt");
+	var _text = "";
+	for (var i = 0; i < 180; i++;)
+	{
+	    var _raw_text = "";
+	    text[i] = file_text_read_string(file);
+		_raw_text = text[i];
+		var _processed_text = replace_player_name(_raw_text);
+		text[i] = _processed_text;
+	    file_text_readln(file);
+	}
+	file_text_close(file);
+
+
+text_length[0] = string_length(text[0]);
+draw_char = 0;
+text_spd = 1;
+
+

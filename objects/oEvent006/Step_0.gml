@@ -1,6 +1,7 @@
 
-
-
+//Check game progress
+if oGame.game_progress > 6
+{instance_destroy();}
 
 if place_meeting(x,y,oPlayer) && deactivate_count <= 0	&& oPlayer.state == "Move"
 {
@@ -21,10 +22,10 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 			dialog_Screen(global.name_goddess, 51, 51, GOD_picture, 0, SE_system01);
 		break;
 		case 1 :
-			oHud.draw_color_switch = false;
 			dialog_Screen(global.name_player, 52, 53, Player_picture, 0, SE_dialog_m01);
 		break;
 		case 2 :
+			oHud.draw_color_switch = false;
 			dialog_Screen("???", 54, 55, System_picture, 0, SE_system01);
 		break;
 		case 3 :
@@ -65,14 +66,20 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 		break;
 		case 15 :
 			dialog_Screen(global.name_player, 77, 77, Player_picture, 0, SE_dialog_m01);
-			global.room_direction = 5;
-			instance_create_depth(oPlayer.x, oPlayer.y, 0, ofade_inroom);
+			if (act_switch == false)
+			{
+				var _move = instance_create_depth(oPlayer.x, oPlayer.y, 0, ofade_inroom); 
+				_move.goto_num = 5;
+				_move.duration = 30;
+				act_switch = true;
+			}
 		break;
 		case 16 :
 			dialog_Screen(global.name_nun, 78, 83, System_picture, 0, SE_dialog_m01);
 		break;
 		case 17 :
 			dialog_Screen(global.name_player, 84, 84, Player_picture, 0, SE_dialog_m01);
+			act_switch = false;
 		break;
 		case 18 :
 			dialog_Screen(global.name_nun, 85, 93, System_picture, 0, SE_dialog_m01);
@@ -85,7 +92,11 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 		break;
 		case 21 :	//Input Player NAME
 			if (act_switch == false)
-			{instance_create_depth(x, y, 0, oGet_name); act_switch = true;}
+			{
+				keyboard_string = "" ;
+				instance_create_depth(x, y, 0, oGet_name); 
+				act_switch = true;
+			}
 			if (act_switch == true && global.input_active == false)
 			{
 				global.name_player = global.user_input;
@@ -94,12 +105,13 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 		break;
 		case 22 :
 			dialog_Screen(global.name_nun, 97, 97, System_picture, 0, SE_dialog_m01);
+			act_switch = false;
 		break;
 		
 		case 23 :	//End dialog
 			instance_destroy();
 			oPlayer.state = "Move";
-			oGame.game_progress = 2;	
+			oGame.game_progress = 7;	
 			global.dialog_process = 0;
 		break;
 	}
@@ -110,6 +122,7 @@ if place_meeting(x,y,oPlayer) && oPlayer.state == "Stay"	&& !instance_exists(oTe
 if diafalse_count > 0 
 {diafalse_count = count_decrease(diafalse_count, 1, 0); if diafalse_count <= 0 {dialog_endswitch = false;}}
 
-
+if act_switch == true
+{toPlayer();}
 
 act_count = count_decrease(act_count, 1, 0);

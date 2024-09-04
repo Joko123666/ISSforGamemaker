@@ -59,7 +59,7 @@ if (isOpen) {
 switch (state)
 {
 	case "Closed" :
-		if (oGame.gameinput.inventory)
+		if (oGame.gameinput.inventory)	&& oPlayer.state == "Move"
 		{
 			selected_slot = 0;
 			oPlayer.state = "Stay";
