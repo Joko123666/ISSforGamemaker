@@ -116,6 +116,7 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"Mainstream_dialog.txt","CopyToMask":-1,"filePath":"datafiles","name":"Mainstream_dialog.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"NPC_dialog.txt","CopyToMask":-1,"filePath":"datafiles","name":"NPC_dialog.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"Skill_description.txt","CopyToMask":-1,"filePath":"datafiles","name":"Skill_description.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],

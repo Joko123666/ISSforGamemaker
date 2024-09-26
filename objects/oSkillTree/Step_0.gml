@@ -3,7 +3,7 @@ if (keyboard_check_pressed(ord("T"))) {
     isOpen = !isOpen;
     if (isOpen) {
         selected_position = [0, 0]; // 스킬트리가 열릴 때 첫 스킬을 선택
-        selected_skill = "skill_0";
+        selected_skill = "skill_pray";
         oPlayer.state = "Stay";
     } else {
         oPlayer.state = "Move";
