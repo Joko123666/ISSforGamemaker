@@ -22,12 +22,11 @@ function set_skilltree()
 	global.skilltree_temple_price[2][1] = 200;
 }
 
-
-function check_skilltree()
-{
-	
-
+function open_skill_tree_menu() {
+    isOpen = true;  // 스킬트리 창 열기
+    // 추가 UI 처리
 }
+
 
 function get_templeskilltree(i, j)
 {
@@ -124,42 +123,56 @@ function load_skill_text(_linenum)
 }
 
 // 스킬 구조체 정의
-function Skill(name, description, prerequisites) {
-    return {
-        name: name,
-        description: description,
-        prerequisites: prerequisites, // 배열 형태로 이전 스킬 ID를 저장
-        unlocked: false
-    };
-}
-function Skill_Wealth(name, description, prerequisites) {
-    return {
-        name: name,
-        description: description,
-        prerequisites: prerequisites, // 배열 형태로 이전 스킬 ID를 저장
-        unlocked: false
-    };
+function Skill(name, description, prerequisites, piety_cost) {
+    var skill = ds_map_create();
+    skill[? "name"] = name;
+    skill[? "description"] = description;
+    skill[? "prerequisites"] = prerequisites;
+    skill[? "unlocked"] = false;
+    skill[? "piety_cost"] = piety_cost; // 재화 필요량 추가
+    return skill;
 }
 
-// 스킬을 해제할 수 있는지 확인하는 함수
+function Skill_Wealth(name, description, prerequisites, piety_cost) {  
+        var _wealthskill = ds_map_create();
+	    _wealthskill[? "name"] = name;
+	    _wealthskill[? "description"] = description;
+	    _wealthskill[? "prerequisites"] = prerequisites;
+	    _wealthskill[? "unlocked"] = false;
+	    _wealthskill[? "piety_cost"] = piety_cost; // 재화 필요량 추가
+	    return _wealthskill;
+}
+
+// 스킬을 해금할 수 있는지 확인하는 함수
 function can_unlock(skill_id) {
-    if (skill_id == "") return false;
-    var skill = ds_map_find_value(skills, skill_id);
-    for (var i = 0; i < array_length_1d(skill.prerequisites); i++) {
-        var prerequisite_id = skill.prerequisites[i];
-        var prerequisite_skill = ds_map_find_value(skills, prerequisite_id);
-        if (!prerequisite_skill.unlocked) {
+    var skill = ds_map_find_value(global.selected_skill_tree, skill_id);
+    
+    // 스킬이 이미 해금되었는지 확인
+    if (skill[? "unlocked"]) {
+        return false;
+    }
+
+    // 필요한 선행 스킬을 모두 해금했는지 확인
+    var prerequisites = skill[? "prerequisites"];
+    for (var i = 0; i < array_length_1d(prerequisites); i++) {
+        var prereq_skill = ds_map_find_value(global.selected_skill_tree, prerequisites[i]);
+        if (!prereq_skill[? "unlocked"]) {
             return false;
         }
     }
+    
     return true;
 }
 
-// 스킬을 해제하는 함수
+
+// 스킬 해금 함수
 function unlock_skill(skill_id) {
-    if (skill_id == "") return;
-    var skill = ds_map_find_value(skills, skill_id);
-    skill.unlocked = true;
-    ds_map_replace(skills, skill_id, skill);
+    var skill = ds_map_find_value(global.selected_skill_tree, skill_id);
+    
+    // 스킬 해금 처리
+    if (can_unlock(skill_id)) {
+        skill[? "unlocked"] = true;
+        show_debug_message("Skill Unlocked: " + skill[? "name"]);
+    }
 }
 

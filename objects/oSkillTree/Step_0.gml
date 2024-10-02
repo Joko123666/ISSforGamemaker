@@ -28,20 +28,27 @@ if (isOpen) {
         update_selected_skill();
     }
 
-    // E 키를 눌러서 습득하기
-    if (selected_skill != "" && !ds_map_find_value(skills, selected_skill).unlocked && can_unlock(selected_skill)) {
-        if (keyboard_check(ord("E"))) {
-            e_key_hold_time += 1;
-            if (e_key_hold_time >= required_hold_time) {
-                unlock_skill(selected_skill);
-                e_key_hold_time = 0; // 초기화
-            }
-        } else {
-            e_key_hold_time = 0; // 초기화
-        }
-    } else {
-        e_key_hold_time = 0; // 초기화
-    }
+    // E 키를 눌러서 스킬 해금
+	if (can_unlock(selected_skill)) {
+	    if (keyboard_check(ord("E"))) {
+	        e_key_hold_time += 1;
+	        if (e_key_hold_time >= required_hold_time) {
+	            var skill = ds_map_find_value(skills, selected_skill);
+            
+	            // 재화가 충분한지 확인
+	            if (global.piety >= skill[? "piety_cost"]) {
+	                unlock_skill(selected_skill);
+	                global.piety -= skill[? "piety_cost"]; // 재화 차감
+	                e_key_hold_time = 0;
+	            } else {
+	                show_debug_message("Not enough piety.");
+	                e_key_hold_time = 0;
+	            }
+	        }
+	    } else {
+	        e_key_hold_time = 0; // 초기화
+	    }
+	}
 }
 
 function update_selected_skill() {

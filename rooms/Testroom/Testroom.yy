@@ -40,7 +40,6 @@
     {"name":"inst_5540FC41","path":"rooms/Testroom/Testroom.yy",},
     {"name":"inst_3C45B3D1","path":"rooms/Testroom/Testroom.yy",},
     {"name":"inst_7EE5BF9A","path":"rooms/Testroom/Testroom.yy",},
-    {"name":"inst_1348CA78","path":"rooms/Testroom/Testroom.yy",},
     {"name":"inst_150A7601","path":"rooms/Testroom/Testroom.yy",},
     {"name":"inst_22422DB4","path":"rooms/Testroom/Testroom.yy",},
     {"name":"inst_61DE1F81","path":"rooms/Testroom/Testroom.yy",},
@@ -150,7 +149,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oItem_sell","path":"objects/oItem_sell/oItem_sell.yy",},"propertyId":{"name":"set_item_min","path":"objects/oItem_sell/oItem_sell.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":608.0,},
         {"$GMRInstance":"v1","%Name":"inst_7EE5BF9A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7EE5BF9A","objectId":{"name":"oBoard_price","path":"objects/oBoard_price/oBoard_price.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":160.0,},
-        {"$GMRInstance":"v1","%Name":"inst_1348CA78","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1348CA78","objectId":{"name":"oSkilltree_temple","path":"objects/oSkilltree_temple/oSkilltree_temple.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2304.0,"y":736.0,},
         {"$GMRInstance":"v1","%Name":"inst_150A7601","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_150A7601","objectId":{"name":"oSkillpot","path":"objects/oSkillpot/oSkillpot.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2336.0,"y":896.0,},
         {"$GMRInstance":"v1","%Name":"inst_22422DB4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22422DB4","objectId":{"name":"oSkillpot","path":"objects/oSkillpot/oSkillpot.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oSkillpot","path":"objects/oSkillpot/oSkillpot.yy",},"propertyId":{"name":"skill_i","path":"objects/oSkillpot/oSkillpot.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},

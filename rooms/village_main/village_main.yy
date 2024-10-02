@@ -23,6 +23,7 @@
     {"name":"inst_1F3DC12A","path":"rooms/village_main/village_main.yy",},
     {"name":"inst_7ABEBC4","path":"rooms/village_main/village_main.yy",},
     {"name":"inst_64526DA4","path":"rooms/village_main/village_main.yy",},
+    {"name":"inst_5A0E49F6","path":"rooms/village_main/village_main.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -43,10 +44,10 @@
           -2147483648,-123,0,-2,-2147483648,3,1879048240,-2147483648,1879048240,-6,-2147483648,3,1879048240,-2147483648,
           1879048240,-241,-2147483648,-78,0,2,45,46,-43,0,-2,-2147483648,12,1879048239,-2147483648,1879048239,
           -2147483648,-2147483648,45,46,-2147483648,-2147483648,1879048239,-2147483648,1879048239,-110,-2147483648,
-          -2,0,-129,-2147483648,-78,0,2,55,56,-43,0,-7,-2147483648,2,55,56,-115,-2147483648,-2,0,-129,-2147483648,
+          -2,0,-129,-2147483648,-68,0,1,65,-9,0,2,55,56,-43,0,-7,-2147483648,2,55,56,-115,-2147483648,-2,0,-129,
+          -2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,
           -123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,
-          0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,-2147483648,-123,0,-255,
-          -2147483648,
+          0,-255,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"Maptile02","path":"tilesets/Maptile02/Maptile02.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_4899E778_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4899E778_1","objectId":{"name":"oWall","path":"objects/oWall/oWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":189.0,"scaleY":1.0,"x":128.0,"y":1216.0,},
@@ -84,6 +85,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oItem_drop","path":"objects/oItem_drop/oItem_drop.yy",},"propertyId":{"name":"map_set_id","path":"objects/oItem_drop/oItem_drop.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1120.0,"y":1152.0,},
         {"$GMRInstance":"v1","%Name":"inst_64526DA4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_64526DA4","objectId":{"name":"oNPC_test02","path":"objects/oNPC_test02/oNPC_test02.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2016.0,"y":1216.0,},
+        {"$GMRInstance":"v1","%Name":"inst_5A0E49F6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5A0E49F6","objectId":{"name":"oSkillTree_Wealth","path":"objects/oSkillTree_Wealth/oSkillTree_Wealth.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2185.0,"y":1184.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"maptile","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"maptile","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":24,"SerialiseWidth":189,"TileCompressedData":[
           -62,0,-127,-2147483648,-62,0,-127,-2147483648,-62,0,-127,-2147483648,-62,0,-127,-2147483648,-62,0,-118,

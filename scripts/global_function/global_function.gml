@@ -35,6 +35,17 @@ function set_global_variables()
 	global.name_guildmaster = "가가메르";
 	global.name_cook = "펫슈";
 	global.name_merchant = "금블랑";
+	
+	// 전역 스킬트리 맵 생성
+	global.skills_wealth = ds_map_create();
+	global.skills_combat = ds_map_create();
+	global.skills_magic = ds_map_create();
+
+}
+
+function set_game_variables()
+{
+	
 }
 
 function dayreset_genpoint()

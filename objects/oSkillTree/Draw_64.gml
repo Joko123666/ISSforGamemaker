@@ -1,4 +1,4 @@
-// oSkillTree 그리기 이벤트
+	// oSkillTree 그리기 이벤트
 if (isOpen == true) {
 	var _dis = 64;
     var x_start = display_get_gui_width()/4 + _dis;

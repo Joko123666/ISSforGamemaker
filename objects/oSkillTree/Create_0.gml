@@ -6,14 +6,14 @@ skills = ds_map_create();
 skills_wealth = ds_map_create();
 
 #region Wealth_skilltree
-// 스킬 추가 (이름, 설명, 선행 스킬 ID 배열)
+// 스킬 추가 (이름, 설명, 선행 스킬 ID 배열, 필요한 재화)
 var skill_start_num = 1;
-ds_map_add(skills_wealth, "skill_pray", Skill(string(load_skill_text(skill_start_num)), string(load_skill_text(skill_start_num+1)), []));
-ds_map_add(skills_wealth, "skill_minpriceup1", Skill(string(load_skill_text(skill_start_num+2)), string(load_skill_text(skill_start_num+3)), ["skill_pray"]));
-ds_map_add(skills_wealth, "skill_maxhunger1", Skill(string(load_skill_text(skill_start_num+4)), string(load_skill_text(skill_start_num+5)), ["skill_pray"]));
-ds_map_add(skills_wealth, "skill_pricerateup1", Skill(string(load_skill_text(skill_start_num+6)), string(load_skill_text(skill_start_num+7)), ["skill_pray"]));
-ds_map_add(skills_wealth, "skill_varpriceup1", Skill(string(load_skill_text(skill_start_num+8)), string(load_skill_text(skill_start_num+9)), ["skill_pray"]));
-ds_map_add(skills_wealth, "skill_allpriceup1", Skill(string(load_skill_text(skill_start_num+10)), string(load_skill_text(skill_start_num+11)), ["skill_pricerateup1", "skill_varpriceup1", "skill_minpriceup1"]));
+ds_map_add(skills_wealth, "skill_pray", Skill(string(load_skill_text(skill_start_num)), string(load_skill_text(skill_start_num+1)), [], 0)); // 재화 필요
+ds_map_add(skills_wealth, "skill_minpriceup1", Skill(string(load_skill_text(skill_start_num+2)), string(load_skill_text(skill_start_num+3)), ["skill_pray"], 20));
+ds_map_add(skills_wealth, "skill_maxhunger1", Skill(string(load_skill_text(skill_start_num+4)), string(load_skill_text(skill_start_num+5)), ["skill_pray"], 30));
+ds_map_add(skills_wealth, "skill_pricerateup1", Skill(string(load_skill_text(skill_start_num+6)), string(load_skill_text(skill_start_num+7)), ["skill_pray"], 25));
+ds_map_add(skills_wealth, "skill_varpriceup1", Skill(string(load_skill_text(skill_start_num+8)), string(load_skill_text(skill_start_num+9)), ["skill_pray"], 35));
+ds_map_add(skills_wealth, "skill_allpriceup1", Skill(string(load_skill_text(skill_start_num+10)), string(load_skill_text(skill_start_num+11)), ["skill_pricerateup1", "skill_varpriceup1", "skill_minpriceup1"], 100));
 
 // 스킬 ID를 쉽게 참조하기 위한 배열
 skills_wealth_ids = ds_list_create();
