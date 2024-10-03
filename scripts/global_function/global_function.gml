@@ -40,7 +40,30 @@ function set_global_variables()
 	global.skills_wealth = ds_map_create();
 	global.skills_combat = ds_map_create();
 	global.skills_harvest = ds_map_create();
-
+	// 스킬트리 초기화 시 스킬 추가
+	var skill_start_num = 1;
+	ds_map_add(global.skills_wealth, "skill_pray", Skill(string(load_skill_text(skill_start_num)), string(load_skill_text(skill_start_num+1)), [], 0));
+	ds_map_add(global.skills_wealth, "skill_minpriceup1", Skill(string(load_skill_text(skill_start_num+2)), string(load_skill_text(skill_start_num+3)), ["skill_pray"], 20));
+	ds_map_add(global.skills_wealth, "skill_maxhunger1", Skill(string(load_skill_text(skill_start_num+4)), string(load_skill_text(skill_start_num+5)), ["skill_pray"], 25));
+	ds_map_add(global.skills_wealth, "skill_pricerateup1", Skill(string(load_skill_text(skill_start_num+6)), string(load_skill_text(skill_start_num+7)), ["skill_pray"], 30));
+	ds_map_add(global.skills_wealth, "skill_varpriceup1", Skill(string(load_skill_text(skill_start_num+8)), string(load_skill_text(skill_start_num+9)), ["skill_pray"], 35));
+	ds_map_add(global.skills_wealth, "skill_allpriceup1", Skill(string(load_skill_text(skill_start_num+10)), string(load_skill_text(skill_start_num+11)), ["skill_pricerateup1", "skill_varpriceup1", "skill_minpriceup1"], 100));
+	// 스킬 ID를 쉽게 참조하기 위한 배열
+	global.skills_wealth_ids = ds_list_create();
+	ds_list_add(global.skills_wealth_ids, "skill_pray");
+	ds_list_add(global.skills_wealth_ids, "skill_minpriceup1");
+	ds_list_add(global.skills_wealth_ids, "skill_maxhunger1");
+	ds_list_add(global.skills_wealth_ids, "skill_pricerateup1");
+	ds_list_add(global.skills_wealth_ids, "skill_varpriceup1");
+	ds_list_add(global.skills_wealth_ids, "skill_allpriceup1");
+	// 스킬 위치 정의 (격자 형태)
+	global.skill_wealth_positions = ds_map_create();
+	ds_map_add(global.skill_wealth_positions, "skill_pray", [0, 0]);
+	ds_map_add(global.skill_wealth_positions, "skill_minpriceup1", [0, 1]);
+	ds_map_add(global.skill_wealth_positions, "skill_maxhunger1", [-1, 1]);
+	ds_map_add(global.skill_wealth_positions, "skill_pricerateup1", [1, 1]);
+	ds_map_add(global.skill_wealth_positions, "skill_varpriceup1", [2, 1]);
+	ds_map_add(global.skill_wealth_positions, "skill_allpriceup1", [0, 2]);
 
 }
 

@@ -1,2 +1,2 @@
 
-load_game(1);
+global.piety++;
