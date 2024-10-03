@@ -36,10 +36,11 @@ function set_global_variables()
 	global.name_cook = "펫슈";
 	global.name_merchant = "금블랑";
 	
-	// 전역 스킬트리 맵 생성
+	// oGame의 Create 이벤트 또는 초기화 스크립트에서
 	global.skills_wealth = ds_map_create();
 	global.skills_combat = ds_map_create();
-	global.skills_magic = ds_map_create();
+	global.skills_harvest = ds_map_create();
+
 
 }
 
