@@ -31,6 +31,7 @@ menu_left = keyboard_check_pressed(vk_left);
 menu_right = keyboard_check_pressed(vk_right);
 menu_down = keyboard_check_pressed(vk_down);
 menu_confirm = keyboard_check_pressed(ord("E"));
+menu_confirm_hold = keyboard_check(ord("E"));
 menu_cancel = keyboard_check_pressed(vk_escape);
 menu_back = keyboard_check_pressed(ord("Q"));
 

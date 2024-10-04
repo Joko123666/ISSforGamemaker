@@ -1,2 +1,2 @@
 
-global.piety++;
+global.piety+= 100;

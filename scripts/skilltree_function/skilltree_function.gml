@@ -143,40 +143,31 @@ function Skill_Wealth(name, description, prerequisites, piety_cost) {
 	    return _wealthskill;
 }
 
-// 스킬 해금 가능 여부를 확인하는 함수
+// 스킬 해금 여부를 확인하는 함수
 function can_unlock(skill_id) {
     var skill = ds_map_find_value(global.selected_skill_tree, skill_id);
-    
-    if (skill == undefined) {
-        return false;
+    if (skill == undefined || skill[? "unlocked"]) {
+        return false;  // 이미 해금된 스킬은 더 해금할 수 없음
     }
     
-    if (skill[? "unlocked"]) {
-        return false;
-    }
-
     // 선행 스킬 확인
     var prerequisites = skill[? "prerequisites"];
     for (var i = 0; i < array_length_1d(prerequisites); i++) {
         var prereq_skill = ds_map_find_value(global.selected_skill_tree, prerequisites[i]);
         if (!prereq_skill[? "unlocked"]) {
-            return false;
+            return false;  // 선행 스킬이 해금되지 않으면 false 반환
         }
     }
 
-    return true;
+    return true;  // 모든 조건이 만족하면 true 반환
 }
 
-
-
-
-// 스킬 해금 함수
+// 스킬을 해금하는 함수
 function unlock_skill(skill_id) {
     var skill = ds_map_find_value(global.selected_skill_tree, skill_id);
-    
-    // 스킬 해금 처리
     if (can_unlock(skill_id)) {
-        skill[? "unlocked"] = true;
+        skill[? "unlocked"] = true;  // 스킬 해금
+        global.piety -= skill[? "piety_cost"];  // 재화 차감
         show_debug_message("Skill Unlocked: " + skill[? "name"]);
     }
 }
