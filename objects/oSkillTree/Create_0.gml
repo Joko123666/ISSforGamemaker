@@ -4,14 +4,14 @@ row_length = 5;
 
 skills = ds_map_create();
 
-/*
+
 // 스킬 추가 (이름, 설명, 선행 스킬 ID 배열)
-ds_map_add(skills, "skill_0", Skill("Skill 0", "Description of Skill 0", []));
-ds_map_add(skills, "skill_1", Skill("Skill 1", "Description of Skill 1", ["skill_0"]));
-ds_map_add(skills, "skill_2", Skill("Skill 2", "Description of Skill 2", ["skill_0"]));
-ds_map_add(skills, "skill_3", Skill("Skill 3", "Description of Skill 3", ["skill_1"]));
-ds_map_add(skills, "skill_4", Skill("Skill 4", "Description of Skill 4", ["skill_2"]));
-ds_map_add(skills, "skill_5", Skill("Skill 5", "Description of Skill 5", ["skill_3", "skill_4"]));
+ds_map_add(skills, "skill_0", Skill("Skill 0", "Description of Skill 0", [], 0));
+ds_map_add(skills, "skill_1", Skill("Skill 1", "Description of Skill 1", ["skill_0"], 10));
+ds_map_add(skills, "skill_2", Skill("Skill 2", "Description of Skill 2", ["skill_0"], 11));
+ds_map_add(skills, "skill_3", Skill("Skill 3", "Description of Skill 3", ["skill_1"], 12));
+ds_map_add(skills, "skill_4", Skill("Skill 4", "Description of Skill 4", ["skill_2"], 13));
+ds_map_add(skills, "skill_5", Skill("Skill 5", "Description of Skill 5", ["skill_3", "skill_4"], 20));
 
 // 스킬 ID를 쉽게 참조하기 위한 배열
 skill_ids = ds_list_create();

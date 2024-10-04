@@ -32,6 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":null,
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"area32",
+    "path":"sprites/area32/area32.yy",
+  },
   "visible":true,
 }
