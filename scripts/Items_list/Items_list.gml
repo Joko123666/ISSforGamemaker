@@ -112,7 +112,7 @@ function set_item_price()
 		array_set(
 			global.item_price, 
 			i, 
-			round(oGame.price_basic + (oGame.price_scale * global.item_baseprice[i]) + (irandom(global.item_variableprice[i]) * oGame.price_variable_scale))
+			round(oGame.price_basic + (oGame.price_scale * global.item_baseprice[i]) + (irandom(global.item_variableprice[i]) * oGame.price_variable_scale))+oGame.price_min
 		);
 	}
 	

@@ -255,7 +255,7 @@
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oSign","path":"objects/oSign/oSign.yy",},},
     {"id":{"name":"oSkillpot","path":"objects/oSkillpot/oSkillpot.yy",},},
-    {"id":{"name":"oSkillTree_Wealth","path":"objects/oSkillTree_Wealth/oSkillTree_Wealth.yy",},},
+    {"id":{"name":"oSkillTree_wealth","path":"objects/oSkillTree_wealth/oSkillTree_wealth.yy",},},
     {"id":{"name":"oSkillTree","path":"objects/oSkillTree/oSkillTree.yy",},},
     {"id":{"name":"oSpike_00","path":"objects/oSpike_00/oSpike_00.yy",},},
     {"id":{"name":"oSpike_01","path":"objects/oSpike_01/oSpike_01.yy",},},

@@ -37,9 +37,11 @@ function set_global_variables()
 	global.name_merchant = "금블랑";
 	
 	// oGame의 Create 이벤트 또는 초기화 스크립트에서
-	global.skills_wealth = ds_map_create();
-	global.skills_combat = ds_map_create();
-	global.skills_harvest = ds_map_create();
+	
+	init_skill_tree();
+	global.selected_skilltree = global.skilltree_wealth;
+	
+	/*
 	// 스킬트리 초기화 시 스킬 추가
 	var skill_start_num = 1;
 	ds_map_add(global.skills_wealth, "skill_pray", Skill(string(load_skill_text(skill_start_num)), string(load_skill_text(skill_start_num+1)), [], 0));
@@ -48,7 +50,7 @@ function set_global_variables()
 	ds_map_add(global.skills_wealth, "skill_pricerateup1", Skill(string(load_skill_text(skill_start_num+6)), string(load_skill_text(skill_start_num+7)), ["skill_pray"], 30));
 	ds_map_add(global.skills_wealth, "skill_varpriceup1", Skill(string(load_skill_text(skill_start_num+8)), string(load_skill_text(skill_start_num+9)), ["skill_pray"], 35));
 	ds_map_add(global.skills_wealth, "skill_allpriceup1", Skill(string(load_skill_text(skill_start_num+10)), string(load_skill_text(skill_start_num+11)), ["skill_pricerateup1", "skill_varpriceup1", "skill_minpriceup1"], 100));
-
+	*/
 }
 
 function set_game_variables()

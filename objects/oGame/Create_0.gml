@@ -20,6 +20,7 @@ token_guild = 0;	//토큰(미정)
 price_variable_scale = 1;
 price_basic = 0;
 price_scale = 1;
+price_min = 0;
 
 //채집용 변수
 rooting_speed = 1;
@@ -54,7 +55,7 @@ global.quest_max = 10; // 최대 퀘스트 수
 item_price[0] = 0;
 set_base_price();
 set_item_price();
-set_skilltree();
+//set_skilltree();
 set_global_variables();
 dayreset_genpoint();
 Encyclopedia_set();

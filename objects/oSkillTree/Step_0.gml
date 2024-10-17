@@ -1,14 +1,11 @@
 // oSkillTree 스텝 이벤트
-if (keyboard_check_pressed(ord("T"))) {
-    isOpen = !isOpen;
+if (oGame.gameinput.interaction) && (distance_to_object(oPlayer) < 32)
+{
+    if (!isOpen) {isOpen = true;}
     if (isOpen) {
         selected_position = [0, 0]; // 스킬트리가 열릴 때 첫 스킬을 선택
         selected_skill = "skill_pray";
         oPlayer.state = "Stay";
-		global.selected_skill_tree = global.skills_wealth;  // Wealth 스킬트리 선택
-	    if (global.selected_skill_tree == undefined) {
-	        show_debug_message("Error: selected_skill_tree is undefined.");
-	    }
     } else {
         oPlayer.state = "Move";
     }
@@ -47,9 +44,9 @@ if (isOpen) {
 	}
 
 }
-/*
+
 function update_selected_skill() {
-    for (var i = 0; i < ds_list_size(skill_ids); i++) {
+    for (var i = 0; i < ds_list_size(global.skilltree); i++) {
         var skill_id = ds_list_find_value(skill_ids, i);
         var position = ds_map_find_value(skill_positions, skill_id);
         if (position[0] == selected_position[0] && position[1] == selected_position[1]) {

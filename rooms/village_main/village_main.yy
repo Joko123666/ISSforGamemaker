@@ -23,8 +23,7 @@
     {"name":"inst_1F3DC12A","path":"rooms/village_main/village_main.yy",},
     {"name":"inst_7ABEBC4","path":"rooms/village_main/village_main.yy",},
     {"name":"inst_64526DA4","path":"rooms/village_main/village_main.yy",},
-    {"name":"inst_5A0E49F6","path":"rooms/village_main/village_main.yy",},
-    {"name":"inst_36435D3C","path":"rooms/village_main/village_main.yy",},
+    {"name":"inst_13B52E34","path":"rooms/village_main/village_main.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -86,8 +85,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oItem_drop","path":"objects/oItem_drop/oItem_drop.yy",},"propertyId":{"name":"map_set_id","path":"objects/oItem_drop/oItem_drop.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1120.0,"y":1152.0,},
         {"$GMRInstance":"v1","%Name":"inst_64526DA4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_64526DA4","objectId":{"name":"oNPC_test02","path":"objects/oNPC_test02/oNPC_test02.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2016.0,"y":1216.0,},
-        {"$GMRInstance":"v1","%Name":"inst_5A0E49F6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5A0E49F6","objectId":{"name":"oSkillTree_Wealth","path":"objects/oSkillTree_Wealth/oSkillTree_Wealth.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2185.0,"y":1184.0,},
-        {"$GMRInstance":"v1","%Name":"inst_36435D3C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_36435D3C","objectId":{"name":"oSkillTree","path":"objects/oSkillTree/oSkillTree.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1863.0,"y":1184.0,},
+        {"$GMRInstance":"v1","%Name":"inst_13B52E34","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_13B52E34","objectId":{"name":"oSkillTree_wealth","path":"objects/oSkillTree_wealth/oSkillTree_wealth.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1856.0,"y":1184.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"maptile","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"maptile","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":24,"SerialiseWidth":189,"TileCompressedData":[
           -62,0,-127,-2147483648,-62,0,-127,-2147483648,-62,0,-127,-2147483648,-62,0,-127,-2147483648,-62,0,-118,
